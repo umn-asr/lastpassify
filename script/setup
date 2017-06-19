@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# script/setup: Set up LastPassify for the first time after cloning
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/bootstrap
+
+echo "==> LastPassify is now ready to go!"

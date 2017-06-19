@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# script/bootstrap: Resolve all dependencies that LastPassify requires to run.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+if [ "$(uname -s)" = "Darwin" ]; then
+brew update
+
+command -v lpass >/dev/null 2>&1 || {
+  echo "==> Installing LastPass-CLI…"
+    brew install lastpass-cli
+}
+fi
+
+if [ -f "Gemfile" ]; then
+echo "==> Installing gem dependencies…"
+bundle check >/dev/null 2>&1  || {
+  bundle install --quiet --without production
+}
+fi
+
+if [ -f ".overcommit.yml" ]; then
+echo "==> Installing Overcommit hooks…"
+bundle exec overcommit
+bundle exec overcommit --sign
+fi
