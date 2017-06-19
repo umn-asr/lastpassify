@@ -32,7 +32,11 @@ Now you can add Artifactory to your list of gem sources:
 
 Now when you run a `gem sources --list` at the commandline, Artifactory should be listed along with RubyGems.org
 
-The gem can be installed globally for your version of Ruby by running `gem update && gem install lastpassify`. Otherwise to install it per-project, see the next section for instructions.
+Finally, your Bundler needs to be configured to be able to authenticate and pull gems from Artifactory:
+
+`$ bundle config artifactory.umn.edu <USERNAME>:<YOUR_API_KEY>`
+
+The gem can be installed globally for your version of Ruby by running `gem sources -u && gem install lastpassify`. Otherwise to install it per-project, see the next section for instructions.
 
 #### Adding to your project's Gemfile
 
