@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "overcommit"
   spec.add_development_dependency "awesome_print"
   spec.add_development_dependency "aruba"
-  spec.add_dependency "thor", "~> 0.19.4"
+  spec.add_dependency "thor"
 end
