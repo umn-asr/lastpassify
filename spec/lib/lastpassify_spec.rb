@@ -1,26 +1,50 @@
 require_relative "../spec_helper"
 
-RSpec.describe LastPassify::LastPassify, type: :aruba, :exit_timeout => 1, :startup_wait_time => 2 do
-
-  let(:lpass) { File.expand_path('../../../bin/lastpassify', __FILE__) }
-
+RSpec.describe LastPassify::LastPassify, type: :aruba do
   describe "when given a database.example.yml file" do
-    let(:lpassify) { "#{lpass}" }
-    let(:path) { expand_path("%/database.example.yml") }
     let(:input) { "database.example.yml" }
-    let(:output) { "database.yml" }
+    let(:output) { "config/database.yml" }
 
     before :each do
-      run "bundle exec lastpassify"
+      copy "%/database.example.yml", "database.example.yml"
     end
 
     it "copies the output file to config/database.yml" do
-      expect(read(output)).to eq [output]
-      # expect(input).to be_an_existing_file
+      copy "%/database.example.yml", "database.example.yml"
+      run "bundle exec lastpassify #{input}"
+      expect(output).to be_an_existing_file
+      expect(output).to have_file_content(/Ex@mple_p@ssw0rd\#\$/)
     end
-    it "populates LastPass fields"
-    it "doesn't include production bloc in output file"
-    it "doesn't include staging bloc in output file"
+
+    context "includes production flag" do
+      before :each do
+        run "bundle exec lastpassify #{input} -p"
+      end
+
+      it "copies production bloc" do
+        expect(output).to have_file_content(/production/)
+      end
+    end
+
+    context "includes staging flag" do
+      before :each do
+        run "bundle exec lastpassify #{input} -s"
+      end
+
+      it "copies staging bloc" do
+        expect(output).to have_file_content(/staging/)
+      end
+    end
+
+    context "output file is set" do
+      before :each do
+        run "bundle exec lastpassify #{input} some_other_file.yml"
+      end
+
+      it "creates output filename" do
+        expect("some_other_file.yml").to be_an_existing_file
+      end
+    end
   end
 
   it "has a version number" do

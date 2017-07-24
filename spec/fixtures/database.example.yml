@@ -4,9 +4,15 @@ global_defaults: &global_defaults
   adapter: oracle_enhanced
 
 # Development environment
-development: &development_defaults
+development: &development
   <<: *global_defaults
-  host: <%= lookup('lastpass', 'asr_dev_user/development', field='Hostname') %>
-  database: <%= lookup('lastpass', 'asr_dev_user/development', field='Database') %>
-  username: <%= lookup('lastpass', 'asr_dev_user/development', field='username') %>
-  password: <%= lookup('lastpass', 'asr_dev_user/development', field='password') %>
+  host: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify', field='Hostname') %>
+  database: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify', field='Database') %>
+  username: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify', field='username') %>
+  password: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify', field='password') %>
+
+staging:
+  <<: *development
+
+production:
+  <<: *development

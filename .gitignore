@@ -10,3 +10,4 @@ bundle
 ehthumbs.db
 Thumbs.db
 *.swp
+tmp/

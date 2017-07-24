@@ -1,0 +1,10 @@
+---
+UtilityFunction:
+  public_methods_only: true
+
+TooManyStatements:
+  enabled: true
+  max_statements: 7
+
+exclude_paths:
+  - bundle
