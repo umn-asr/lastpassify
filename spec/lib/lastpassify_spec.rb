@@ -10,7 +10,6 @@ RSpec.describe LastPassify::LastPassify, type: :aruba do
     end
 
     it "copies the output file to config/database.yml" do
-      copy "%/database.example.yml", "database.example.yml"
       run "bundle exec lastpassify #{input}"
       expect(output).to be_an_existing_file
       expect(output).to have_file_content(/Ex@mple_p@ssw0rd\#\$/)
