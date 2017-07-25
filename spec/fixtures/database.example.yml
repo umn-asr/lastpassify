@@ -10,6 +10,7 @@ development: &development
   database: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify', field='Database') %>
   username: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify', field='username') %>
   password: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify', field='password') %>
+  secret_key: <%= lookup('lastpass', 'Shared-Artifactory/lastpassify_secret_key', field='Secret Key') %>
 
 staging:
   <<: *development

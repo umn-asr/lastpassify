@@ -15,6 +15,11 @@ RSpec.describe LastPassify::LastPassify, type: :aruba do
       expect(output).to have_file_content(/Ex@mple_p@ssw0rd\#\$/)
     end
 
+    it "retrieves values for keys that contain spaces" do
+      run "bundle exec lastpassify #{input}"
+      expect(output).to have_file_content(/secret_key: test/)
+    end
+
     context "includes production flag" do
       before :each do
         run "bundle exec lastpassify #{input} -p"

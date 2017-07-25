@@ -41,7 +41,7 @@ module LastPassify
         response = if %w[username password url notes id name].include? field
                      `lpass show --#{field} "#{shared_path}"`.chomp
                    else
-                     `lpass show --field=#{field} "#{shared_path}"`.chomp
+                     `lpass show --field='#{field}' "#{shared_path}"`.chomp
                    end
 
         puts "Please fill in: '#{shared_path}' : #{field} field" if response.empty?
