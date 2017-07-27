@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lastpassify (0.3.0)
+    lastpassify (0.4.0)
       thor
 
 GEM
@@ -100,7 +100,6 @@ DEPENDENCIES
   aruba (~> 0.14.2)
   awesome_print
   bundler (~> 1.15)
-  cucumber
   lastpassify!
   overcommit
   rake

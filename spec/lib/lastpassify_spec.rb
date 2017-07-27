@@ -15,6 +15,16 @@ RSpec.describe LastPassify::LastPassify, type: :aruba do
       expect(output).to have_file_content(/Ex@mple_p@ssw0rd\#\$/)
     end
 
+    it "doesn't copy production block" do
+      run "bundle exec lastpassify #{input}"
+      expect(output).not_to have_file_content(/production/)
+    end
+
+    it "doesn't copy staging block" do
+      run "bundle exec lastpassify #{input}"
+      expect(output).not_to have_file_content(/staging|qat/)
+    end
+
     it "retrieves values for keys that contain spaces" do
       run "bundle exec lastpassify #{input}"
       expect(output).to have_file_content(/secret_key: test/)
@@ -25,7 +35,7 @@ RSpec.describe LastPassify::LastPassify, type: :aruba do
         run "bundle exec lastpassify #{input} -p"
       end
 
-      it "copies production bloc" do
+      it "copies production block" do
         expect(output).to have_file_content(/production/)
       end
     end
@@ -35,7 +45,7 @@ RSpec.describe LastPassify::LastPassify, type: :aruba do
         run "bundle exec lastpassify #{input} -s"
       end
 
-      it "copies staging bloc" do
+      it "copies staging block" do
         expect(output).to have_file_content(/staging/)
       end
     end

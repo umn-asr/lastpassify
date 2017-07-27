@@ -15,5 +15,8 @@ development: &development
 staging:
   <<: *development
 
+qat:
+  <<: *development
+
 production:
   <<: *development
