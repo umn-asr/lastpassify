@@ -6,6 +6,8 @@ LastPassify is a gem for automating `database.yml` configuration files. The goal
 
 LastPassify requires [lastpass-cli](https://github.com/lastpass/lastpass-cli) to be installed.
 
+Also, LastPassify only works with Ruby version 2 and above.
+
 LastPassify expects ERB in the inputted YAML file and uses lastpass-cli to populate these fields with data from LastPass.com
 The conventions around how the values should be structured stored on LastPass are described in detail at the [asr_ansible repo](https://github.umn.edu/asrweb/asr_ansible).
 
