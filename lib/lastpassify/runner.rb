@@ -9,12 +9,12 @@ module LastPassify
 
     def execute!
       exit_code = begin
-        # Thor accesses these streams directly rather than letting them be injected, so we replace them...
+        # Replacing streams so we can use them
         $stderr = @stderr
         $stdin = @stdin
         $stdout = @stdout
 
-        # Run our normal Thor app the way we know and love.
+        # Execute LastPassify
         LastPassify.start(@argv)
 
         # Thor::Base#start does not have a return value, assume success if no exception is raised.
@@ -28,14 +28,6 @@ module LastPassify
       rescue SystemExit => e
         e.status
       ensure
-        # TODO: reset your app here, free up resources, etc.
-        # Examples:
-        # MyApp.logger.flush
-        # MyApp.logger.close
-        # MyApp.logger = nil
-        #
-        # MyApp.reset_singleton_instance_variables
-
         # ...then we put the streams back.
         $stderr = STDERR
         $stdin = STDIN
