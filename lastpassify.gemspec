@@ -11,16 +11,8 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Populate ERB file with values from LastPass}
   spec.description   = %q{This gem populates a given ERB/YAML file with values from LastPass using LastPass-CLI.}
-  spec.homepage      = "https://github.umn.edu/asrweb/lastpassify"
+  spec.homepage      = "https://github.com/umn-asr/lastpassify"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "https://artifactory.umn.edu/artifactory/api/gems/asr-rubygems-local"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
