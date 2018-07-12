@@ -1,6 +1,6 @@
 # LastPassify
 
-LastPassify is a gem for automating `database.yml` configuration files. The goal of this gem is to populate a given a YAML ERB config file with values from LastPass. It uses the Ruby toolkit [Thor](https://github.com/erikhuda/thor) and [lastpass-cli](https://github.com/lastpass/lastpass-cli).
+[![Gem Version](https://badge.fury.io/rb/lastpassify.svg)](https://badge.fury.io/rb/lastpassify) LastPassify is a gem for automating `database.yml` configuration files. The goal of this gem is to populate a given a YAML ERB config file with values from LastPass. It uses the Ruby toolkit [Thor](https://github.com/erikhuda/thor) and [lastpass-cli](https://github.com/lastpass/lastpass-cli).
 
 ### Install
 
