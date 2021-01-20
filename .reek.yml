@@ -1,0 +1,23 @@
+---
+detectors:
+  IrresponsibleModule:
+    exclude:
+    - LastPassify::Runner
+  MissingSafeMethod:
+    exclude:
+    - LastPassify::Runner
+  TooManyInstanceVariables:
+    exclude:
+    - LastPassify::Runner
+  TooManyStatements:
+    enabled: true
+    max_statements: 7
+    exclude:
+    - LastPassify::Runner#execute!
+  UtilityFunction:
+    public_methods_only: true
+  UncommunicativeVariableName:
+    exclude:
+    - LastPassify::Runner#execute!
+exclude_paths:
+  - bundle

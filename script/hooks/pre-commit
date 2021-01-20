@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+if [ "$SKIP_HOOKS" != "true" ]; then
+  script/lint
+fi
