@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fixed the loading of the LastPassify executable.
+
 ## [0.4.2]
 
 - Updates to dependencies
