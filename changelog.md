@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### [Added]
+- Tests now ensure you are logged in to lastpass before running
+
 ## [0.4.3]
 
 - Fixed the loading of the LastPassify executable.
