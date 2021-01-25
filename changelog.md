@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.3]
+
 - Fixed the loading of the LastPassify executable.
 
 ## [0.4.2]
@@ -14,5 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Minimum Ruby version is now 2.3
 - Hopefully fixing the binstub warning
 
-[Unreleased]: https://github.com/umn-asr/lastpassify/compare/v0.4.2...HEAD
+[Unreleased]: https://github.com/umn-asr/lastpassify/compare/v0.4.3...HEAD
+[0.4.3]: https://github.com/umn-asr/lastpassify/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/umn-asr/lastpassify/compare/3997abac1101eb75c91543241651976be4d49f73...HEAD
