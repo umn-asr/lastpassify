@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# script/lint: Run our code and security linters
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+echo "==> Checking Gems..."
+bundle exec bundler-audit check --update
+echo "==> Running Reek..."
+bundle exec reek
+echo "==> Running Standard..."
+bundle exec standardrb --no-fix

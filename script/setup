@@ -8,4 +8,11 @@ cd "$(dirname "$0")/.."
 
 script/bootstrap
 
+echo "==> Adding .git/safe…"
+# https://thoughtbot.com/blog/git-safe
+mkdir -p .git/safe
+
+echo "==> Creating a pre-commit hook"
+cp script/hooks/* .git/hooks
+
 echo "==> LastPassify is now ready to go!"

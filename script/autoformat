@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# script/autoformat: Run our code formatters
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+echo "==> Running Reek..."
+bundle exec reek $(git diff --name-only --ignore-submodules=all --cached) --force-exclusion
+echo "==> Running Standard..."
+bundle exec standardrb

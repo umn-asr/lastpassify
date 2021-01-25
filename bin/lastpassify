@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-$: << File.expand_path("../../lib/", __FILE__)
-require "rubygems"
-require "bundler/setup"
-require "thor"
-require "lastpassify/runner"
-LastPassify::Runner.new(ARGV.dup).execute!

@@ -22,7 +22,7 @@ module LastPassify
 
     desc "Takes a file to process, and outputs a new file populated with values from LastPass."
 
-    NOW = Time.now.strftime('%v')
+    NOW = Time.now.strftime("%v")
 
     def main
       raise LPassNotInstalled, "Please install LastPass-CLI - https://github.com/lastpass/lastpass-cli" unless lastpass_installed?
@@ -39,10 +39,10 @@ module LastPassify
     no_commands do
       def lookup(_source, shared_path, field)
         response = if %w[username password url notes id name].include? field
-                     `lpass show --#{field} "#{shared_path}"`.chomp
-                   else
-                     `lpass show --field='#{field}' "#{shared_path}"`.chomp
-                   end
+          `lpass show --#{field} "#{shared_path}"`.chomp
+        else
+          `lpass show --field='#{field}' "#{shared_path}"`.chomp
+        end
 
         puts "Please fill in: '#{shared_path}' : #{field} field" if response.empty?
 
@@ -58,13 +58,13 @@ module LastPassify
 
     def delete_staging(yml)
       yml.keys.each do |key|
-        yml.delete(key) if key.to_s =~ /staging|qat/
+        yml.delete(key) if /staging|qat/.match?(key.to_s)
       end
     end
 
     def delete_production(yml)
       yml.keys.each do |key|
-        yml.delete(key) if key.to_s =~ /production/
+        yml.delete(key) if /production/.match?(key.to_s)
       end
     end
   end
