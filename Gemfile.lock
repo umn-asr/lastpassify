@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lastpassify (0.4.1)
+    lastpassify (0.4.2)
       thor
 
 GEM
