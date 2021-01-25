@@ -2,6 +2,7 @@ fix: true
 parallel: true
 format: progress
 default_ignores: true
+ruby_version: 2.7.1
 
 ignore:
   - 'db/schema.rb'
