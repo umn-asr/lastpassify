@@ -7,6 +7,6 @@ set -e
 cd "$(dirname "$0")/.."
 
 echo "==> Running Reek..."
-reek $(git diff --name-only --ignore-submodules=all --cached) --force-exclusion
+bundle exec reek $(git diff --name-only --ignore-submodules=all --cached) --force-exclusion
 echo "==> Running Standard..."
-standardrb
+bundle exec standardrb
