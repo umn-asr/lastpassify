@@ -12,8 +12,6 @@ cd "$(dirname "$0")/.."
 
 export ENV="test"
 
-script/update
-
 echo "===> Running tests..."
 
 if [ -n "$1" ]; then
