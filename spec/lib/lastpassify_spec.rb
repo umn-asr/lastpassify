@@ -5,6 +5,13 @@ RSpec.describe LastPassify::LastPassify, type: :aruba do
     let(:input) { "database.example.yml" }
     let(:output) { "config/database.yml" }
 
+    before :all do
+      status = system("lpass status -q")
+      unless status
+        raise(StandardError, "Please log in to lastpass with lpass login")
+      end
+    end
+
     before :each do
       copy "%/database.example.yml", "database.example.yml"
     end
