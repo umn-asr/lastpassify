@@ -53,7 +53,7 @@ module LastPassify
     private
 
     def lastpass_installed?
-      system("command -v lpass")
+      system("sh -c 'command -v lpass'")
     end
 
     def delete_staging(yml)
