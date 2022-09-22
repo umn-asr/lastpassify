@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lastpassify (0.4.3)
+    lastpassify (0.5.0)
       thor
 
 GEM
@@ -84,7 +84,7 @@ GEM
       psych (~> 3.1)
       rainbow (>= 2.0, < 4.0)
     regexp_parser (2.0.3)
-    rexml (3.2.4)
+    rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -120,7 +120,7 @@ GEM
       ffi (~> 1.1)
     thor (1.1.0)
     thread_safe (0.3.6)
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
 
@@ -139,4 +139,4 @@ DEPENDENCIES
   standard
 
 BUNDLED WITH
-   2.2.6
+   2.2.23
