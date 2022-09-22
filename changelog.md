@@ -6,13 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Update `rexml` and `tzinfo` gems for CVEs
+- Fix comment in `Gemfile`
+- Alphabetize dependencies in `gemspec`
+
 ## [0.5.0]
 
-### [Added]
+### Added
 - Tests now ensure you are logged in to lastpass before running
   - https://github.com/umn-asr/lastpassify/issues/9
 
-### [Fixed]
+### Fixed
 - Unable to see that lpass is installed
   - https://github.com/umn-asr/lastpassify/issues/12
 

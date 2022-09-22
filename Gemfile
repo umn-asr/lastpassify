@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in comment_builder.gemspec
+# Specify your gem's dependencies in lastpassify.gemspec
 gemspec
