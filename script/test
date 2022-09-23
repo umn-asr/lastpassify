@@ -12,6 +12,21 @@ cd "$(dirname "$0")/.."
 
 export ENV="test"
 
+set +e
+
+echo "===> Checking if logged into lastpass..."
+
+LPASS_STATUS="$(lpass status)"
+echo $LPASS_STATUS
+
+if [ "${LPASS_STATUS}" = 'Not logged in.' ]; then
+  lpass_username="$USER@umn.edu"
+  `lpass login $lpass_username >/dev/null`
+  echo "Logged into lastpass."
+fi
+
+set -e
+
 echo "===> Running tests..."
 
 if [ -n "$1" ]; then
