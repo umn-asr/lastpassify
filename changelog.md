@@ -6,11 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `byebug` as a development dependency
+
+### Changed
+
+- Lastpassify should now be compatible with projects using Psych 4 and above
+
 ### Fixed
 
 - Update `rexml` and `tzinfo` gems for CVEs
 - Fix comment in `Gemfile`
 - Alphabetize dependencies in `gemspec`
+- Prompt user to login to LastPass when running tests
 
 ## [0.5.0]
 
