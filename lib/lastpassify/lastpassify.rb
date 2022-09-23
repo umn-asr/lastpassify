@@ -27,8 +27,16 @@ module LastPassify
     def main
       raise LPassNotInstalled, "Please install LastPass-CLI - https://github.com/lastpass/lastpass-cli" unless lastpass_installed?
 
+      current_psych_version = Gem::Version.new(Psych::VERSION)
+      psych_version_requiring_named_args = Gem::Version.new("4.0.0")
+
       template input_file, output_file do |content|
-        yml = YAML.safe_load content, [], [], true
+        yml = if current_psych_version >= psych_version_requiring_named_args
+          YAML.safe_load content, aliases: true
+        else
+          YAML.safe_load content, [], [], true
+        end
+
         delete_staging(yml) unless options[:staging]
         delete_production(yml) unless options[:production]
         content = YAML.dump(yml)
