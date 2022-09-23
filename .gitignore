@@ -12,3 +12,4 @@ Thumbs.db
 *.swp
 tmp/
 bin/
+.byebug_history
