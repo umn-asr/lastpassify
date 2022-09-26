@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0]
+
 ### Added
 
 - `byebug` as a development dependency
@@ -47,7 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Minimum Ruby version is now 2.3
 - Hopefully fixing the binstub warning
 
-[Unreleased]: https://github.com/umn-asr/lastpassify/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/umn-asr/lastpassify/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/umn-asr/lastpassify/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/umn-asr/lastpassify/compare/v0.4.3...v0.5.0
 [0.4.3]: https://github.com/umn-asr/lastpassify/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/umn-asr/lastpassify/compare/3997abac1101eb75c91543241651976be4d49f73...HEAD
